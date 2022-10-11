@@ -3,11 +3,12 @@ def firstBadVersion(n):
     l = 0
     r = n
 
-    while l < m:
+    while l != m:
         if isBadVersion(m) == 0:
             l = m
+            m = (l + r) // 2
         else:
             r = m
-        m = (l + r) // 2
+            m = (l + r) // 2
 
     return (m + 1)
